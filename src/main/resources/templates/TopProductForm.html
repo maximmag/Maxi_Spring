@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>home</title>
+    <STYLE>
+			p{
+				font-size: 120%;
+			}
+	</STYLE>
+</head>
+<body>
+
+    <FORM th:method="GET">
+        <label for="kpp">Номер карты: </label>
+        <input type="text" id="kpp" name="kpp"/>
+        <input type = submit VALUE = "Топ 3 товаров">
+    </FORM>
+
+    <p th:text="'Топ 3 товаров покупателя с картой №'+${kpp}+':'"></p>
+    <div style="color:red" th:each="top : ${tops}">
+        <p th:text="${top}"/>
+    </div>
+    <p style="color:red" th:text="${message}"/>
+</body>
+</html>

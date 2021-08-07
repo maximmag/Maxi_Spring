@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>home</title>
+    <STYLE>
+			font{
+				font-size: 150%;
+			}
+	</STYLE>
+</head>
+<body>
+    <FORM th:method="GET">
+        <p>
+            <label for="date">Дата: </label>
+            <input type="date" id="date" name="date" value="${date}"/>
+        </p>
+        <input type = submit VALUE = "Показать сумму покупок">
+    </FORM>
+    <br>
+    <font th:text="'Сумма покупок за ' + ${date} + ': '"/>
+    <font th:text="${sum} + ' руб'" color="red"/>
+</body>
+</html>
